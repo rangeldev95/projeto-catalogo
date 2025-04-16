@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camisa Palmeiras 2025-26 Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carregando o arquivo preco.js -->
+    <script src="../../../preco.js" defer></script>
+    <script>
+      // Função para atualizar o link do WhatsApp
+      function atualizarLinkWhatsApp() {
+        const tamanho = document.querySelector('input[name="tamanho"]:checked');
+        const personalizacao = document.querySelector('input[name="personaliza"]:checked');
+
+        const nomeCamisa = 'Camisa Palmeiras 2025-26 Home'; // Atualize o nome do produto se necessário
+        const texto = `Olá, gostaria de pedir a ${nomeCamisa}%0A
+Tamanho: ${tamanho ? tamanho.value : ''}%0A
+Deseja personalizar: ${personalizacao ? personalizacao.value : ''}`;
+
+        const link = `https://wa.me/5579981155957?text=${texto}`;
+        document.getElementById('whatsapp-link').href = link;
+      }
+
+      // Função para alterar a imagem principal ao clicar nas imagens menores
+      function selecionarImagem(src) {
+        document.getElementById('imagem-principal').src = src;
+      }
+
+      // Chama a função de atualização de preço assim que o conteúdo estiver carregado
+      window.onload = function() {
+        // Atualize o identificador "palmeiras-25-26-home" para o produto correto
+        atualizarPreco("palmeiras-25-26-home", "preco-produto");
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- HEADER -->
+    <header class="bg-red-600 text-white p-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <a href="../../../index.html">
+            <img
+              src="../../../../imagens/logo.png"
+              alt="Logo Doria Sports"
+              class="w-10 h-10 rounded-full object-cover"
+            />
+          </a>
+          <h1 class="text-2xl font-bold"><a href="../../../../index.html">Doria Sports</a></h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- PRODUTO DETALHADO -->
+    <main class="container mx-auto py-8 px-4">
+      <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow p-6">
+        <!-- Imagens -->
+        <div class="md:w-1/2 flex flex-col items-center">
+          <div class="w-[350px]">
+            <img
+              id="imagem-principal"
+              src="../../../imagens/brasil/palmeiras/palmeiras25-26 home/01.jpg"
+              alt="Camisa Palmeiras Principal"
+              class="rounded-xl mb-4 w-full object-cover"
+            />
+            <div class="flex flex-wrap justify-center gap-2">
+              <img
+                src="../../../imagens/brasil/palmeiras/palmeiras25-26 home/01.jpg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+              <img
+                src="../../../imagens/brasil/palmeiras/palmeiras25-26 home/02.jpg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+              <img
+                src="../../../imagens/brasil/palmeiras/palmeiras25-26 home/03.jpg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+              <img
+                src="../../../imagens/brasil/palmeiras/palmeiras25-26 home/04.jpg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Produto -->
+        <div class="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+          <h2 class="text-2xl font-bold mb-4">Camisa Palmeiras 2025-26 Home</h2>
+
+          <!-- Preço -->
+          <p class="text-xl text-red-600 font-semibold mb-4">
+            <p data-id="lisa" class="preco text-red-600 font-semibold">Carregando preço...</p>
+          </p>
+
+          <!-- Tamanhos -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2">Tamanho:</label>
+            <div class="space-x-4">
+              <label><input type="radio" name="tamanho" value="P" onchange="atualizarLinkWhatsApp()" /> P</label>
+              <label><input type="radio" name="tamanho" value="M" onchange="atualizarLinkWhatsApp()" /> M</label>
+              <label><input type="radio" name="tamanho" value="G" onchange="atualizarLinkWhatsApp()" /> G</label>
+              <label><input type="radio" name="tamanho" value="GG" onchange="atualizarLinkWhatsApp()" /> GG</label>
+              <label><input type="radio" name="tamanho" value="XGG" onchange="atualizarLinkWhatsApp()" /> XGG</label>
+            </div>
+          </div>
+
+          <!-- Personalização -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2">Deseja personalizar? (Grátis)</label>
+            <div class="space-x-4">
+              <label><input type="radio" name="personaliza" value="Sim" onchange="atualizarLinkWhatsApp()" /> Sim</label>
+              <label><input type="radio" name="personaliza" value="Não" onchange="atualizarLinkWhatsApp()" /> Não</label>
+            </div>
+          </div>
+
+          <!-- Botão WhatsApp -->
+          <a
+            id="whatsapp-link"
+            href="#"
+            target="_blank"
+            class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
+          >
+            Peça pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-200 text-center p-4 mt-10 text-sm text-gray-600">
+      © 2025 Doria Sports. Todos os direitos reservados.
+    </footer>
+  </body>
+</html>

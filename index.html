@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doria Sports - Catálogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .submenu {
+        display: none;
+      }
+      .category:hover .submenu {
+        display: block;
+      }
+    </style>
+    <script src="preco.js" defer></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- HEADER -->
+    <header class="bg-red-600 text-white p-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <a href="index.html"><img src="imagens/logo.png" alt="Logo Doria Sports" class="w-10 h-10 rounded-full object-cover" /></a>
+          <h1 class="text-2xl font-bold">Doria Sports</h1>
+        </div>
+        <div class="flex items-center space-x-6">
+          <span class="italic text-sm hidden sm:block">De um torcedor para outro</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORIAS -->
+    <section class="bg-gray-200 py-4">
+      <div class="container mx-auto flex justify-between space-x-8">
+        <div class="category relative text-center hover:bg-red-600 hover:text-white transition-colors duration-200 p-4 rounded-lg cursor-pointer">
+          <span class="text-xl font-semibold text-gray-800">Brasileiros</span>
+          <div class="submenu absolute left-0 w-48 bg-white text-gray-800 shadow-lg rounded-lg mt-2 p-4">
+            <h3 class="font-semibold">Série A</h3>
+            <ul class="list-none">
+              <li><a href="">Flamengo</a></li>
+              <li><a href="">Palmeiras</a></li>
+              <li><a href="">Grêmio</a></li>
+              <li><a href="">São Paulo</a></li>
+              <li><a href="">Internacional</a></li>
+              <li>Cruzeiro</li>
+              <li>Vasco</li>
+              <li>Botafogo</li>
+              <li>Sport</li>
+            </ul>
+            <h3 class="font-semibold mt-4">Série B</h3>
+            <ul class="list-none">
+              <li>Chapecoense</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="category relative text-center hover:bg-red-600 hover:text-white transition-colors duration-200 p-4 rounded-lg cursor-pointer">
+          <span class="text-xl font-semibold text-gray-800">Internacionais</span>
+          <div class="submenu absolute left-0 w-48 bg-white text-gray-800 shadow-lg rounded-lg mt-2 p-4">
+            <h3 class="font-semibold">Premier League</h3>
+            <ul class="list-none">
+              <li>Manchester United</li>
+              <li>Chelsea</li>
+              <li>Liverpool</li>
+              <li>Manchester City</li>
+            </ul>
+            <h3 class="font-semibold mt-4">La Liga</h3>
+            <ul class="list-none">
+              <li>Barcelona</li>
+              <li>Real Madrid</li>
+              <li>Atlético de Madrid</li>
+            </ul>
+            <h3 class="font-semibold mt-4">Serie A</h3>
+            <ul class="list-none">
+              <li>Juventus</li>
+              <li>Inter de Milão</li>
+              <li>Milan</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="category relative text-center hover:bg-red-600 hover:text-white transition-colors duration-200 p-4 rounded-lg cursor-pointer">
+          <span class="text-xl font-semibold text-gray-800">Seleções</span>
+          <div class="submenu absolute left-0 w-48 bg-white text-gray-800 shadow-lg rounded-lg mt-2 p-4">
+            <h3 class="font-semibold">América do Sul</h3>
+            <ul class="list-none">
+              <li>Brasil</li>
+              <li>Argentina</li>
+              <li>Chile</li>
+            </ul>
+            <h3 class="font-semibold mt-4">Europa</h3>
+            <ul class="list-none">
+              <li>França</li>
+              <li>Alemanha</li>
+              <li>Inglaterra</li>
+            </ul>
+            <h3 class="font-semibold mt-4">África</h3>
+            <ul class="list-none">
+              <li>Senegal</li>
+              <li>Cameroon</li>
+              <li>Gana</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <main class="container mx-auto py-8">
+      <h2 class="text-3xl font-semibold mb-6">Produtos mais vendidos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Produto 1 -->
+        <div class="bg-white rounded-2xl shadow p-4">
+          <a href="links/brasileiros/flamengo/fla-home-25-26/detalhe-fla-25-26.html">
+            <img src="imagens/brasil/Flamengo/fla-25-26 M/01.jpeg" alt="Camisa Flamengo" class="rounded-xl mb-4" />
+          </a>
+          <h3 class="text-lg font-bold">Camisa Flamengo 24/25</h3>
+          <p data-id="lisa" class="preco text-red-600 font-semibold">Carregando preço...</p>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="bg-white rounded-2xl shadow p-4">
+          <a href="links/brasileiros/palmeiras/palmeiras-25-26-H.html">
+            <img src="imagens/brasil/palmeiras/palmeiras25-26 home/01.jpg" alt="Camisa Palmeiras" class="rounded-xl mb-4" />
+          </a>
+          <h3 class="text-lg font-bold">Camisa Palmeiras 24/25</h3>
+          <p data-id="lisa" class="preco text-red-600 font-semibold">Carregando preço...</p>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="bg-white rounded-2xl shadow p-4">
+          <img src="imagens/internacionais/espanha/barcelona/barcelona 25-26 home/1336aa97.jpeg" alt="Camisa Barcelona

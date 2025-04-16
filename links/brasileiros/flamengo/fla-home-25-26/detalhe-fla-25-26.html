@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camisa Flamengo 2025-26 Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carregando o arquivo preco.js -->
+    <script src="../../../../preco.js" defer></script>
+    <script>
+      // Função para atualizar o link do WhatsApp
+      function atualizarLinkWhatsApp() {
+        const tamanho = document.querySelector('input[name="tamanho"]:checked');
+        const personalizacao = document.querySelector('input[name="personaliza"]:checked');
+        const nomeCamisa = 'Camisa Flamengo 2025-26 Home'; // Atualize o nome do produto se necessário
+        const texto = `Olá, gostaria de pedir a ${nomeCamisa}%0A
+Tamanho: ${tamanho ? tamanho.value : ''}%0A
+Deseja personalizar: ${personalizacao ? personalizacao.value : ''}`;
+
+        const link = `https://wa.me/5579981155957?text=${texto}`;
+        document.getElementById('whatsapp-link').href = link;
+      }
+
+      // Função para alterar a imagem principal ao clicar nas imagens menores
+      function selecionarImagem(src) {
+        document.getElementById('imagem-principal').src = src;
+      }
+
+      // Função para atualizar o carrinho
+      let carrinho = [];
+
+      function adicionarAoCarrinho() {
+        const tamanho = document.querySelector('input[name="tamanho"]:checked');
+        const personalizacao = document.querySelector('input[name="personaliza"]:checked');
+        const nomeCamisa = 'Camisa Flamengo 2025-26 Home';
+        const preco = 199.99; // Substitua com o valor do produto
+        const imagem = document.getElementById('imagem-principal').src;
+
+        if (tamanho && personalizacao) {
+          const produto = {
+            nome: nomeCamisa,
+            tamanho: tamanho.value,
+            personalizacao: personalizacao.value,
+            preco: preco,
+            imagem: imagem,
+          };
+
+          carrinho.push(produto);
+          atualizarCarrinho();
+        } else {
+          alert("Selecione o tamanho e a personalização antes de adicionar ao carrinho.");
+        }
+      }
+
+      // Função para atualizar o carrinho na interface
+      function atualizarCarrinho() {
+        const carrinhoDiv = document.getElementById('itens-carrinho');
+        carrinhoDiv.innerHTML = '';
+        let total = 0;
+        
+        carrinho.forEach((item, index) => {
+          total += item.preco;
+
+          const itemCarrinho = document.createElement('div');
+          itemCarrinho.classList.add('flex', 'items-center', 'justify-between', 'p-2', 'border-b', 'border-gray-300');
+          itemCarrinho.innerHTML = `
+            <div class="flex items-center space-x-2">
+              <img src="${item.imagem}" class="w-10 h-10 object-cover rounded" />
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">${item.nome}</span>
+                <span class="text-xs">${item.tamanho}</span>
+                <span class="text-xs">Personalização: ${item.personalizacao}</span>
+              </div>
+            </div>
+            <span class="text-sm">R$ ${item.preco.toFixed(2)}</span>
+            <button onclick="removerDoCarrinho(${index})" class="text-red-500 hover:text-red-700">Remover</button>
+          `;
+          carrinhoDiv.appendChild(itemCarrinho);
+        });
+
+        const totalCarrinho = document.getElementById('total-carrinho');
+        totalCarrinho.textContent = `Total: R$ ${total.toFixed(2)}`;
+      }
+
+      // Função para remover um item do carrinho
+      function removerDoCarrinho(index) {
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+      }
+
+      // Função para alternar a visibilidade do carrinho
+      function alternarCarrinho() {
+        const carrinhoDiv = document.getElementById('carrinho');
+        carrinhoDiv.classList.toggle('hidden');
+      }
+
+      // Função para gerar o link de "Fechar Pedido" com os detalhes dos itens
+      function fecharPedido() {
+        const detalhesPedido = carrinho.map(item => {
+          return `${item.nome} - Tamanho: ${item.tamanho} - Personalização: ${item.personalizacao} - R$ ${item.preco.toFixed(2)}`;
+        }).join('%0A');
+
+        const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+        const texto = `Olá, gostaria de finalizar meu pedido:%0A${detalhesPedido}%0ATotal: R$ ${total.toFixed(2)}`;
+        const link = `https://wa.me/5579981155957?text=${texto}`;
+        window.open(link, '_blank');
+      }
+
+      // Atualiza o preço quando a página carrega
+      window.onload = function() {
+        atualizarPreco("flamengo-25-26-home", "preco-produto");
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- HEADER -->
+    <header class="bg-red-600 text-white p-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <a href="../../../index.html">
+            <img
+              src="../../../../imagens/logo.png"
+              alt="Logo Doria Sports"
+              class="w-10 h-10 rounded-full object-cover"
+            />
+          </a>
+          <h1 class="text-2xl font-bold"><a href="../../../../index.html">Doria Sports</a></h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- PRODUTO DETALHADO -->
+    <main class="container mx-auto py-8 px-4">
+      <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow p-6">
+        <!-- Imagens -->
+        <div class="md:w-1/2 flex flex-col items-center">
+          <div class="w-[350px]">
+            <img
+              id="imagem-principal"
+              src="../../../../imagens/brasil/Flamengo/fla-25-26 M/01.jpeg"
+              alt="Camisa Flamengo Principal"
+              class="rounded-xl mb-4 w-full object-cover"
+            />
+            <div class="flex flex-wrap justify-center gap-2">
+              <img
+                src="../../../../imagens/brasil/Flamengo/fla-25-26 M/01.jpeg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+              <img
+                src="../../../../imagens/brasil/Flamengo/fla-25-26 M/02.jpeg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+              <img
+                src="../../../../imagens/brasil/Flamengo/fla-25-26 M/03.jpeg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+              <img
+                src="../../../../imagens/brasil/Flamengo/fla-25-26 M/04.jpeg"
+                onclick="selecionarImagem(this.src)"
+                class="w-20 h-20 object-cover cursor-pointer rounded-xl border border-gray-300 hover:border-red-600"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Produto -->
+        <div class="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+          <h2 class="text-2xl font-bold mb-4">Camisa Flamengo 2025-26 Home</h2>
+
+          <!-- Preço -->
+          <p class="text-xl text-red-600 font-semibold mb-4">
+            <p data-id="lisa" class="preco text-red-600 font-semibold">Carregando preço...</p>
+          </p>
+
+          <!-- Tamanhos -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2">Tamanho:</label>
+            <div class="space-x-4">
+              <label><input type="radio" name="tamanho" value="P" onchange="atualizarLinkWhatsApp()" /> P</label>
+              <label><input type="radio" name="tamanho" value="M" onchange="atualizarLinkWhatsApp()" /> M</label>
+              <label><input type="radio" name="tamanho" value="G" onchange="atualizarLinkWhatsApp()" /> G</label>
+              <label><input type="radio" name="tamanho" value="GG" onchange="atualizarLinkWhatsApp()" /> GG</label>
+              <label><input type="radio" name="tamanho" value="XGG" onchange="atualizarLinkWhatsApp()" /> XGG</label>
+            </div>
+          </div>
+
+          <!-- Personalização -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2">Deseja personalizar? (Relaxa é gratis!)</label>
+            <div class="space-x-4">
+              <label><input type="radio" name="personaliza" value="Sim" onchange="atualizarLinkWhatsApp()" /> Sim</label>
+              <label><input type="radio" name="personaliza" value="Não" onchange="atualizarLinkWhatsApp()" /> Não</label>
+            </div>
+          </div>
+
+          <!-- Botões ao lado -->
+          <div class="flex space-x-4">
+            <button
+              onclick="adicionarAoCarrinho()"
+              class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 w-1/2"
+            >
+              Adicionar ao Carrinho
+            </button>
+
+            <a
+              id="whatsapp-link"
+              href="#"
+              class="bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors duration-300 w-1/2 flex justify-center items-center"
+              target="_blank"
+            >
+              Peça direto pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Carrinho -->
+    <div
+      id="carrinho"
+      class="hidden fixed top-0 right-0 bg-white w-[300px] h-full shadow-xl z-50 p-6 overflow-y-auto"
+    >
+      <button
+        onclick="alternarCarrinho()"
+        class="absolute top-3 left-3 text-2xl text-gray-600"
+      >
+        &#x2715;
+      </button>
+      <h2 class="text-xl font-semibold mb-4">Carrinho</h2>
+      <div id="itens-carrinho"></div>
+      <div class="mt-4 font-semibold" id="total-carrinho">Total: R$ 0.00</div>
+      <button
+        onclick="fecharPedido()"
+        class="mt-4 bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition-colors duration-300"
+      >
+        Fechar Pedido
+      </button>
+    </div>
+
+    <!-- Ícone Carrinho -->
+    <div class="fixed bottom-4 right-4">
+      <button onclick="alternarCarrinho()" class="bg-red-600 text-white rounded-full p-3 shadow-lg">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 3h18M3 12h18M3 21h18"
+          />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer class="bg-gray-200 text-center p-4 mt-10 text-sm text-gray-600">
+      © 2025 Doria Sports. Todos os direitos reservados.
+    </footer>
+  </body>
+</html>
