@@ -1,8 +1,10 @@
 // Dicionário de preços dos produtos
 const precos = {
-  "lisa": 159.90,
+  "lisa": 139.90,
+  "patrocinios":209.90,
   "infantil": 189.90,
-  "barcelona": 259.90
+  "retro": 210.90,
+  "lisa24-25": 109.90,
 };
 
 // Função para atualizar o preço de um produto

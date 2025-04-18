@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doria Sports - Catálogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .submenu {
+        display: none;
+      }
+      .category:hover .submenu {
+        display: block;
+      }
+    </style>
+    <script src="preco.js" defer></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+    <!-- HEADER -->
+    <header class="bg-red-600 text-white p-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex items-center space-x-3">
+          <a href="index.html"><img src="imagens/logo.png" alt="Logo Doria Sports" class="w-10 h-10 rounded-full object-cover" /></a>
+          <h1 class="text-2xl font-bold">Doria Sports</h1>
+        </div>
+        <div class="hidden sm:block">
+          <span class="italic text-sm">De um torcedor para outro</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORIAS -->
+    <section class="bg-gray-200 py-4">
+      <div class="container mx-auto flex flex-col sm:flex-row justify-between gap-4 px-4">
+        <!-- Categoria: Brasileiros -->
+        <div class="category relative text-center hover:bg-red-600 hover:text-white transition-colors duration-200 p-4 rounded-lg cursor-pointer">
+          <span class="text-xl font-semibold">Brasileiros</span>
+          <div class="submenu absolute left-0 w-48 bg-white text-gray-800 shadow-lg rounded-lg mt-2 p-4 z-10">
+            <h3 class="font-semibold">Série A</h3>
+            <ul>
+              <li><a href="links/brasileiros/flamengo/flamengo_main.html">Flamengo</a></li>
+              <li><a href="#">Palmeiras</a></li>
+              <li><a href="#">Grêmio</a></li>
+              <li><a href="#">São Paulo</a></li>
+              <li><a href="#">Internacional</a></li>
+              <li><a href="#">Cruzeiro</a></li>
+              <li><a href="#">Vasco</a></li>
+              <li><a href="#">Botafogo</a></li>
+              <li><a href="#">Sport</a></li>
+            </ul>
+            <h3 class="font-semibold mt-4">Série B</h3>
+            <ul>
+              <li><a href="#">Chapecoense</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Categoria: Internacionais -->
+        <div class="category relative text-center hover:bg-red-600 hover:text-white transition-colors duration-200 p-4 rounded-lg cursor-pointer">
+          <span class="text-xl font-semibold">Internacionais</span>
+          <div class="submenu absolute left-0 w-48 bg-white text-gray-800 shadow-lg rounded-lg mt-2 p-4 z-10">
+            <h3 class="font-semibold">Premier League</h3>
+            <ul>
+              <li><a href="#">Manchester United</a></li>
+              <li><a href="#">Chelsea</a></li>
+              <li><a href="#">Liverpool</a></li>
+              <li><a href="#">Manchester City</a></li>
+            </ul>
+            <h3 class="font-semibold mt-4">La Liga</h3>
+            <ul>
+              <li><a href="#">Barcelona</a></li>
+              <li><a href="#">Real Madrid</a></li>
+              <li><a href="#">Atlético de Madrid</a></li>
+            </ul>
+            <h3 class="font-semibold mt-4">Serie A</h3>
+            <ul>
+              <li><a href="#">Juventus</a></li>
+              <li><a href="#">Inter de Milão</a></li>
+              <li><a href="#">Milan</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Categoria: Seleções -->
+        <div class="category relative text-center hover:bg-red-600 hover:text-white transition-colors duration-200 p-4 rounded-lg cursor-pointer">
+          <span class="text-xl font-semibold">Seleções</span>
+          <div class="submenu absolute left-0 w-48 bg-white text-gray-800 shadow-lg rounded-lg mt-2 p-4 z-10">
+            <h3 class="font-semibold">América do Sul</h3>
+            <ul>
+              <li><a href="#">Brasil</a></li>
+              <li><a href="#">Argentina</a></li>
+              <li><a href="#">Chile</a></li>
+            </ul>
+            <h3 class="font-semibold mt-4">Europa</h3>
+            <ul>
+              <li><a href="#">França</a></li>
+              <li><a href="#">Alemanha</a></li>
+              <li><a href="#">Inglaterra</a></li>
+            </ul>
+            <h3 class="font-semibold mt-4">África</h3>
+            <ul>
+              <li><a href="#">Senegal</a></li>
+              <li><a href="#">Camarões</a></li>
+              <li><a href="#">Gana</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <main class="container mx-auto py-8 px-4">
+      <h2 class="text-3xl font-semibold mb-6">Produtos mais vendidos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Produto 1 -->
+        <div class="bg-white rounded-2xl shadow p-4">
+          <a href="links/brasileiros/flamengo/fla-home-25-26/detalhe-fla-25-26.html">
+            <img src="imagens/brasil/Flamengo/fla-25-26 M/01.jpeg" alt="Camisa Flamengo" class="rounded-xl mb-4 w-full h-48 object-cover" />
+          </a>
+          <h3 class="text-lg font-bold">Camisa Flamengo 24/25</h3>
+          <p data-id="lisa" class="preco text-red-600 font-semibold">Carregando preço...</p>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="bg-white rounded-2xl shadow p-4">
+          <a href="links/brasileiros/palmeiras/palmeiras-25-26-H.html">
+            <img src="imagens/brasil/palmeiras/palmeiras25-26 home/01.jpg" alt="Camisa Palmeiras" class="rounded-xl mb-4 w-full h-48 object-cover" />
+          </a>
+          <h3 class="text-lg font-bold">Camisa Palmeiras 24/25</h3>
+          <p data-id="lisa" class="preco text-red-600 font-semibold">Carregando preço...</p>
+        </div>
+
+        <!-- Adicione mais produtos conforme necessário -->
+      </div>
+    </main>
+
+    <!-- CARRINHO FLUTUANTE -->
+    <div id="carrinho" class="hidden fixed inset-y-0 right-0 bg-white w-80 max-w-full shadow-xl z-50 p-6 overflow-y-auto">
+      <h2 class="text-xl font-semibold mb-4">Carrinho</h2>
+      <div id="itens-carrinho" class="space-y-2 mb-4"></div>
+      <div id="total-carrinho" class="font-bold mb-4">Total: R$ 0,00</div>
+      <button onclick="fecharPedido()" class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
+        Fechar Pedido
+      </button>
+    </div>
+
+    <!-- BOTÃO DO CARRINHO -->
+    <button onclick="alternarCarrinho()" class="fixed bottom-6 right-6 bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition">
+      🛒
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-200 text-gray-600 text-center py-4 mt-auto">
+      <div class="container mx-auto px-4 text-sm">
+        © 2025 Doria Sports. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script src="carrinho.js" defer></script>
+
+  </body>
+</html>
